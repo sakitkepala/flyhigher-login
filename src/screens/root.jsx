@@ -1,5 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   BrowserRouter as Router,
   Outlet,
@@ -16,13 +17,20 @@ import bg from "../assets/background.png";
 import logo from "../assets/logo.png";
 
 function Root() {
+  const isLargeScreen = useMediaQuery("(min-width: 760px)");
   const match = useMatch("/");
   const navigate = useNavigate();
   const location = useLocation();
 
   const isRoot = Boolean(match);
-  if (isRoot) {
+
+  if (isRoot && !isLargeScreen) {
     navigate("/signin");
+    return null; // redirect
+  }
+
+  if (!isRoot && isLargeScreen) {
+    navigate("/");
     return null; // redirect
   }
 
