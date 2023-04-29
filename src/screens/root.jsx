@@ -16,7 +16,7 @@ import { Tabs, Tab } from "@mui/material";
 import bg from "../assets/background.png";
 import logo from "../assets/logo.png";
 
-function Root() {
+function Root({ children }) {
   const isLargeScreen = useMediaQuery("(min-width: 760px)");
   const match = useMatch("/");
   const navigate = useNavigate();
@@ -24,14 +24,24 @@ function Root() {
 
   const isRoot = Boolean(match);
 
+  React.useEffect(() => {
+    if (isRoot && !isLargeScreen) {
+      navigate("/signin");
+    } else if (!isRoot && isLargeScreen) {
+      navigate("/");
+    }
+  }, [isRoot, isLargeScreen]);
+
+  if (!isRoot && isLargeScreen) {
+    return null;
+  }
+
   if (isRoot && !isLargeScreen) {
-    navigate("/signin");
     return null; // redirect
   }
 
-  if (!isRoot && isLargeScreen) {
-    navigate("/");
-    return null; // redirect
+  if (isRoot && isLargeScreen) {
+    return children;
   }
 
   return (
@@ -73,4 +83,4 @@ const TabRouter = React.forwardRef(({ href, ...props }, ref) => {
   return <Link ref={ref} to={href} {...props} />;
 });
 
-export { Root };
+export default Root;

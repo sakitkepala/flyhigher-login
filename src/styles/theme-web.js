@@ -1,15 +1,6 @@
-import { CssBaseline, createTheme, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material";
 
-function FlyHigherTheme({ children }) {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  );
-}
-
-const theme = createTheme({
+const themeWeb = createTheme({
   typography: {
     fontFamily: [
       "Montserrat",
@@ -48,4 +39,4 @@ const theme = createTheme({
   },
 });
 
-export { FlyHigherTheme };
+export { themeWeb };

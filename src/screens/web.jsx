@@ -12,17 +12,17 @@ import {
   InputAdornment,
   IconButton,
 } from "@mui/material";
-import { FullscreenSlides } from "./components/fullscreen-slides";
+import { FullscreenSlides } from "../components/fullscreen-slides";
 
 import { FaGooglePlus } from "react-icons/fa";
 import { IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
 
-import logo from "./assets/logo.png";
-import slide1 from "./assets/slides/1.png";
-import slide2 from "./assets/slides/2.png";
-import slide3 from "./assets/slides/3.png";
-import slide4 from "./assets/slides/4.png";
-import slide5 from "./assets/slides/5.png";
+import logo from "../assets/logo.png";
+import slide1 from "../assets/slides/1.png";
+import slide2 from "../assets/slides/2.png";
+import slide3 from "../assets/slides/3.png";
+import slide4 from "../assets/slides/4.png";
+import slide5 from "../assets/slides/5.png";
 
 function ScreenWeb() {
   return (

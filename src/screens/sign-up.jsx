@@ -27,4 +27,4 @@ function ScreenSignUp() {
   );
 }
 
-export { ScreenSignUp };
+export default ScreenSignUp;
