@@ -12,7 +12,7 @@ function LoginField({ label, ...props }) {
         borderRadius: "0.375rem",
         bgcolor: "rgb(255, 255, 255)",
         color: "rgb(0, 0, 0, 0.8)",
-        fontSize: "0.875rem",
+        fontSize: "0.75rem",
         "::placeholder": { color: "rgb(255, 255, 255)" },
       }}
       {...props}
@@ -31,7 +31,7 @@ function PasswordField(props) {
             aria-label="toggle password visibility"
             onClick={() => setVisible((v) => !v)}
             edge="end"
-            sx={{ color: "rgb(255, 255, 255)", fontSize: "1.125em" }}
+            sx={{ fontSize: "1.5em" }}
           >
             {visible ? <IoEyeOffSharp /> : <IoEyeSharp />}
           </IconButton>

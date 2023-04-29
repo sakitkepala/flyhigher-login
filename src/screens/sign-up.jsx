@@ -1,10 +1,11 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { LoginField, PasswordField } from "../components/login";
+import { SocialAccounts } from "../components/social-accounts";
 
 function ScreenSignUp() {
   return (
-    <Stack spacing={2.5} alignItems="center">
-      <Stack spacing={1.5}>
+    <Stack sx={{ width: "100%" }} alignItems="center" spacing={2.5}>
+      <Stack spacing={1.5} sx={{ width: "80%" }}>
         <LoginField label="Email Address or Phone Number" />
         <PasswordField label="Password" />
         <PasswordField label="Confirm Password" />
@@ -12,7 +13,7 @@ function ScreenSignUp() {
 
       <Button
         sx={{
-          minWidth: "15rem",
+          minWidth: "12.5rem",
           backgroundColor: "rgb(3, 218, 198)",
           color: "rgb(255, 255, 255)",
           fontWeight: 700,
@@ -22,7 +23,7 @@ function ScreenSignUp() {
         Create Account
       </Button>
 
-      <Typography>Or use a social account to create account</Typography>
+      <SocialAccounts label="Or use a social account to create account" />
     </Stack>
   );
 }
